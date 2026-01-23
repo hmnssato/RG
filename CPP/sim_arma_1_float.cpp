@@ -52,7 +52,7 @@ NumericVector rcpp_sim(int imax, double kk,
         xi = abs(xx(i-1,l+1)-xx(i-1,l));
         dphi[l] = kk*abs(xi-ssr);
         if (xi < pow(2.,(1/6)) * ssr){
-          dphi[l]=dphi[l]+epsilon1*(4.*kbt*(-12*pow(ssr,12)/pow(xi,13)+6*pow(ssr,6)/pow(xi,7)));
+          dphi[l]=dphi[l]+epsilon1*(4.*kbt*(-12*pow(ssr,12)/pow(xi,13)+6*pow(ssr,6)/pow(xi,7))+30*kbt*xi/(1-pow(xi/1.6/ssr,2));
         }
       }
     }
@@ -136,3 +136,4 @@ NumericVector rcpp_sim(int imax, double kk,
 
   return zzz;
 }
+
